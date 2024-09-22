@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Contact from "./pages/Contact";
 
 const App = () => {
 
@@ -15,7 +16,11 @@ const App = () => {
     {
       path: 'about-page',
       element: <About />,
+    },
 
+    {
+      path: 'contact-page',
+      element: <Contact />,
     },
 
     {

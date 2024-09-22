@@ -1,4 +1,4 @@
-import { posts } from "../data/data"
+import Header from "../components/Header"
 
 const HomePage = () => {
 
@@ -7,14 +7,10 @@ const HomePage = () => {
     <div>
 
 
-      {posts.map((post) => {
+      <Header />
 
-        return <div key={post.id} className="shadow-2xl text-red-900 p-4 space-y-2">
-          <h1>{post.title}</h1>
-          <p>{post.content}</p>
-        </div>
 
-      })}
+
 
 
 
