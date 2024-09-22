@@ -1,3 +1,4 @@
+import { NavLink, Outlet } from "react-router-dom"
 import Header from "../components/Header"
 
 const HomePage = () => {
@@ -7,7 +8,13 @@ const HomePage = () => {
     <div>
 
 
-      <Header />
+
+
+
+      <NavLink to={'/page-1'}>Page 1</NavLink>
+      <NavLink to={'/page-2'}>Page 2</NavLink>
+
+      <Outlet />
 
 
 
