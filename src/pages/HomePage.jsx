@@ -11,10 +11,8 @@ const HomePage = () => {
 
 
 
-      <NavLink to={'/page-1'}>Page 1</NavLink>
-      <NavLink to={'/page-2'}>Page 2</NavLink>
-
-      <Outlet />
+      <h1>slkdnsdlksdsd</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestiae blanditiis, quo aspernatur itaque sequi rem sint sunt magni quaerat hic debitis eius illum dolor molestias minima adipisci sapiente ea.</p>
 
 
 

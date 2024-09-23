@@ -2,13 +2,11 @@ import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
 
-  const per = {
-    name: 'ram'
-  };
-  return (
-    <div className="bg-black text-white">
 
-      <h1>Logo</h1>
+  return (
+    <div className="bg-black text-white flex items-end justify-between px-3 py-2 ">
+
+      <h1 className="text-2xl">Logo</h1>
 
       <nav className="space-x-4">
 
