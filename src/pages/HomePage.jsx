@@ -5,7 +5,7 @@ const HomePage = () => {
 
 
   return (
-    <div>
+    <div className="sm:bg-pink-700">
 
 
 
