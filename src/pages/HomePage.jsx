@@ -1,20 +1,21 @@
-import { NavLink, Outlet } from "react-router-dom"
-import Header from "../components/Header"
+import DisplaySection from "./home-compo/DisplaySection"
+import Info from "./home-compo/Info"
+import Tech from "./home-compo/Tech"
 
 const HomePage = () => {
 
 
   return (
-    <div className="sm:bg-pink-700">
+    <div >
 
 
 
+      {/* <DisplaySection />
 
 
-      <h1>slkdnsdlksdsd</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestiae blanditiis, quo aspernatur itaque sequi rem sint sunt magni quaerat hic debitis eius illum dolor molestias minima adipisci sapiente ea.</p>
+      <Tech />
 
-
+      <Info /> */}
 
 
 
