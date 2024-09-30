@@ -1,7 +1,26 @@
+import { useState } from "react"
+
+
 const HomePage = () => {
+
+
+
+  const [count, setCount] = useState(0);
+
+
+  const handleClick = () => {
+    setCount((prev) => prev + 1);
+  }
+
+
+
+
   return (
     <div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis sed sit velit facilis ipsam iusto nobis provident mollitia nulla assumenda perspiciatis nesciunt aliquid, doloremque beatae ad eaque cupiditate corrupti perferendis.</p>
+      <h1>{count}{count % 2 === 0 ? 'even' : 'odd'}</h1>
+      <button onClick={handleClick}>Click Me</button>
+
+
     </div>
   )
 }
