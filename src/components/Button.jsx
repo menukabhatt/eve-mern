@@ -1,7 +1,12 @@
-const Button = () => {
+
+const Button = ({ label, color }) => {
+
+
+
+
   return (
     <div>
-      <button className="bg-black text-white px-2 py-1">Add Posts</button>
+      <button className={`${color} text-white px-2 py-1`}>{label}</button>
     </div>
   )
 }

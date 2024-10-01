@@ -1,10 +1,13 @@
-import { faker } from "@faker-js/faker";
+import { faker, ne } from "@faker-js/faker";
 import { useState } from "react"
 import Button from "../components/Button";
 
 const HomePage = () => {
 
   const [posts, setPosts] = useState([]);
+
+  // const sd = ['ram', 'shyam'];
+  // console.log([...sd, 'lio']);
 
   const addPost = () => {
     const newObj = {
@@ -13,18 +16,18 @@ const HomePage = () => {
       image: faker.image.urlPicsumPhotos(),
       id: faker.string.uuid()
     };
-    console.log(newObj);
+    setPosts((prev) => [...prev, newObj]);
   }
 
+  console.log(posts);
 
   return (
     <div className="p-5">
 
-      <Button />
-      <Button />
-      <Button />
+      <button onClick={addPost}>Click To</button>
 
-      <button className="bg-red-700 text-white px-2 py-1">Remove Posts</button>
+      {/* <Button  label={'Add Posts'} color={'bg-green-700'} /> */}
+
 
 
 
