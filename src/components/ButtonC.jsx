@@ -1,5 +1,5 @@
 
-const Button = ({ label, color }) => {
+const ButtonC = ({ label, color }) => {
 
 
 
@@ -10,4 +10,4 @@ const Button = ({ label, color }) => {
     </div>
   )
 }
-export default Button
+export default ButtonC
