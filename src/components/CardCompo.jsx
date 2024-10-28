@@ -6,31 +6,31 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { useNavigate } from "react-router";
 
-export function CardCompo(props) {
-  console.log(props);
+export function CardCompo({ image, label, detail }) {
+
+  const nav = useNavigate();
 
   return (
     <Card className="mt-6 ">
       <CardHeader color="blue-gray" className="relative h-56">
         <img
           className="w-full"
-          src={props.image}
+          src={image}
           alt="card-image"
         />
       </CardHeader>
       <CardBody>
         <Typography variant="h5" color="blue-gray" className="mb-2">
-          UI/UX Review Check
+          {label}
         </Typography>
-        <Typography>
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to &quot;Naviglio&quot; where you can enjoy the main
-          night life in Barcelona.
-        </Typography>
+        <p className="line-clamp-3">
+          {detail}
+        </p>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button>Read More</Button>
+        <Button onClick={() => nav(`/category-items/${label}`)}>Read More</Button>
       </CardFooter>
     </Card>
   );

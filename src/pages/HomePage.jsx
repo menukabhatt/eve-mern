@@ -25,13 +25,19 @@ const HomePage = () => {
   }, []);
 
 
-  console.log(data);
+
 
   return (
     <div className="p-4 grid grid-cols-3 gap-5">
 
       {data && data.categories.map((cata) => {
-        return <CardCompo key={cata.idCategory} age={90} image={cata.strCategoryThumb} />;
+        return <CardCompo
+          key={cata.idCategory}
+          image={cata.strCategoryThumb}
+          label={cata.strCategory}
+          detail={cata.strCategoryDescription}
+
+        />;
       })}
 
 
