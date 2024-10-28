@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import RootLayout from "./components/RootLayout";
 import HomePage from "./pages/HomePage";
-import ItemList from "./pages/ItemList";
 
 const App = () => {
 
@@ -16,10 +15,7 @@ const App = () => {
           index: true,
           element: <HomePage />,
         },
-        {
-          path: 'category-items/:label',
-          element: <ItemList />,
-        },
+
 
       ]
     },
