@@ -1,10 +1,20 @@
 import { CardCompo } from "../components/CardCompo";
+import ListSkeleton from "../components/ListSkeleton";
 import { useApiHooks } from "../hooks/apiHooks";
 
 
 const HomePage = () => {
 
-  const data = useApiHooks('https://www.themealdb.com/api/json/v1/1/categories.php');
+
+  // const persons = ['r', 'b'];
+  // const [q,w] = persons;
+
+  const [data, load] = useApiHooks('https://www.themealdb.com/api/json/v1/1/categories.php');
+
+
+  if (load) {
+    return <ListSkeleton />
+  }
 
 
 
@@ -20,7 +30,6 @@ const HomePage = () => {
           image={cata.strCategoryThumb}
           label={cata.strCategory}
           detail={cata.strCategoryDescription}
-
         />;
       })}
 

@@ -11,11 +11,11 @@ const App = () => {
       path: '/',
       element: <RootLayout />,
       children: [
-
         {
           index: true,
           element: <HomePage />,
         },
+
         {
           path: 'category-items/:label',
           element: <ItemList />,
