@@ -19,8 +19,8 @@ const ItemList = () => {
 
 
       {data && data.meals.map((meal) => {
-        console.log(meal);
-        return <ListCompo key={meal.idMeal} title={meal.strMeal} image={meal.strMealThumb} />;
+        // console.log(meal);
+        return <ListCompo key={meal.idMeal} title={meal.strMeal} image={meal.strMealThumb} id={meal.idMeal} />;
       })}
 
 
