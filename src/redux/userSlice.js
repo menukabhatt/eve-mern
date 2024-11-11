@@ -16,6 +16,14 @@ export const userSlice = createSlice({
     addUser: (state, action) => {
       state.users.push(action.payload);
     },
+    removeUser: (state, action) => {
+      state.users.splice(action.payload, 1);
+    },
+    addUser: (state, action) => {
+      state.users = state.users.map((user) => {
+        return user.id === action.payload.id ? action.payload : user;
+      })
+    },
 
 
 
