@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import * as Yup from 'yup';
 import { addUser } from "../redux/userSlice";
 import { useNavigate } from "react-router";
+import { nanoid } from "@reduxjs/toolkit";
 
 const formSchema = Yup.object({
   username: Yup.string().min(5).max(16).required('Required'),
@@ -34,6 +35,7 @@ const AddForm = () => {
       message: ''
     },
     onSubmit: (val) => {
+      val.id = nanoid();
       dispatch(addUser(val));
       nav(-1);
     },
