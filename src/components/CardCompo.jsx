@@ -1,31 +1,11 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
-import { useNavigate } from "react-router";
-
-export function CardCompo({ user }) {
-
-  const nav = useNavigate();
-
+const CardCompo = ({ user }) => {
   return (
-    <Card className="mt-6 ">
-      <CardHeader color="blue-gray" className="relative h-56">
-        <Typography>{user.username}</Typography>
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-          {user.email}
-        </Typography>
+    <div>
 
-      </CardBody>
-      <CardFooter className="pt-0">
+      <h1>{user.username}</h1>
+      <p>{user.email}</p>
 
-      </CardFooter>
-    </Card>
-  );
+    </div>
+  )
 }
+export default CardCompo

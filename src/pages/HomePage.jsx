@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
-import { CardCompo } from "../components/CardCompo";
+import CardCompo from "../components/CardCompo";
+
 
 const HomePage = () => {
 
