@@ -12,8 +12,8 @@ const HomePage = () => {
     <div className="p-4">
 
 
-      {users.map((user) => {
-        return <CardCompo key={user.id} user={user} />;
+      {users.map((user, index) => {
+        return <CardCompo index={index} key={user.id} user={user} />;
       })}
 
 
