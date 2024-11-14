@@ -1,8 +1,10 @@
 import { IconButton } from "@material-tailwind/react"
 import { ShowDialog } from "./ShowDialog"
+import { useNavigate } from "react-router"
 
 
 const CardCompo = ({ user, index }) => {
+  const nav = useNavigate();
   return (
     <div className="">
 
@@ -10,7 +12,7 @@ const CardCompo = ({ user, index }) => {
       <p>{user.email}</p>
 
       <div className="space-x-2 mt-6">
-        <IconButton size="sm">
+        <IconButton onClick={() => nav(`/update-form/${user.id}`)} size="sm">
           <i className="fas fa-edit" />
         </IconButton>
 
