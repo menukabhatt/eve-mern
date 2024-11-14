@@ -1,10 +1,10 @@
 import { Button, Checkbox, Input, Option, Radio, Select, Textarea, Typography } from "@material-tailwind/react"
 import { useFormik } from "formik"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from 'yup';
-import { addUser } from "../redux/userSlice";
 import { useNavigate, useParams } from "react-router";
 import { nanoid } from "@reduxjs/toolkit";
+import { updateUser } from "../redux/userSlice";
 
 const formSchema = Yup.object({
   username: Yup.string().min(5).max(16).required('Required'),
@@ -16,10 +16,11 @@ const formSchema = Yup.object({
 });
 
 const UpdateForm = () => {
-  const nav = useNavigate();
   const { id } = useParams();
+  const nav = useNavigate();
+  const { users } = useSelector((state) => state.userSlice);
+  const existUser = users.find((user) => user.id === id);
 
-  console.log(id);
 
   const dispatch = useDispatch();
   const {
@@ -31,16 +32,16 @@ const UpdateForm = () => {
     touched
   } = useFormik({
     initialValues: {
-      username: '',
-      email: '',
-      gender: '',
-      habits: [],
-      country: '',
-      message: ''
+      username: existUser.username,
+      email: existUser.email,
+      gender: existUser.gender,
+      habits: existUser.habits,
+      country: existUser.country,
+      message: existUser.message
     },
     onSubmit: (val) => {
-      val.id = nanoid();
-      dispatch(addUser(val));
+      val.id = existUser.id;
+      dispatch(updateUser(val));
       nav(-1);
     },
     validationSchema: formSchema
@@ -74,27 +75,31 @@ const UpdateForm = () => {
             label='Male'
             onChange={handleChange}
             value={'Male'}
+            checked={values.gender === 'Male'}
             name="gender"
           />
           <Radio
             label='Female'
             onChange={handleChange}
+            checked={values.gender === 'Female'}
             value={'Female'}
             name="gender"
           />
         </div>
         {errors.gender && touched.gender && <p className="text-red-600">{errors.gender}</p>}
         <div>
-          <Typography variant="h6">Select Your Habbits</Typography>
+          <Typography variant="h6">Select Your Habits</Typography>
           <Checkbox
             label='Dance'
             onChange={handleChange}
+            checked={values.habits.includes('Dance')}
             value={'Dance'}
             name="habits"
           />
           <Checkbox
             label='Sing'
             onChange={handleChange}
+            checked={values.habits.includes('Sing')}
             value={'Sing'}
             name="habits"
           />
@@ -105,6 +110,7 @@ const UpdateForm = () => {
 
 
           <Select
+            value={values.country}
             onChange={(e) => setFieldValue('country', e)}
             name='country'
             label="Select Your Country">

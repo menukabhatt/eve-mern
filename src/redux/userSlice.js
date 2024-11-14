@@ -23,7 +23,9 @@ export const userSlice = createSlice({
     updateUser: (state, action) => {
       state.users = state.users.map((user) => {
         return user.id === action.payload.id ? action.payload : user;
-      })
+      });
+
+      setUserToLocal(state.users);
     },
 
 
