@@ -1,4 +1,3 @@
-import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
 
@@ -8,13 +7,7 @@ const Header = () => {
 
       <h1 className="text-2xl">Demo</h1>
 
-      <nav className="space-x-4">
 
-
-        <NavLink to={'/add-form'}>Add-Form</NavLink>
-
-
-      </nav>
 
 
 

@@ -1,29 +1,9 @@
-import { useSelector } from "react-redux"
-import CardCompo from "../components/CardCompo";
-
-
 const HomePage = () => {
-
-  const { users } = useSelector((state) => state.userSlice);
-
-
-
   return (
-    <div className="p-4">
+    <div>
 
 
-      {users.map((user, index) => {
-        return <CardCompo index={index} key={user.id} user={user} />;
-      })}
-
-
-
-
-
-
-
-
-    </div >
+    </div>
   )
 }
 export default HomePage

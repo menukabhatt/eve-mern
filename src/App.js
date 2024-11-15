@@ -1,8 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import RootLayout from "./components/RootLayout";
 import HomePage from "./pages/HomePage";
-import AddForm from "./pages/AddForm";
-import UpdateForm from "./pages/UpdateForm";
 
 
 const App = () => {
@@ -21,14 +19,6 @@ const App = () => {
           element: <HomePage />,
         },
 
-        {
-          path: 'add-form',
-          element: <AddForm />,
-        },
-        {
-          path: 'update-form/:id',
-          element: <UpdateForm />,
-        },
 
 
       ]
