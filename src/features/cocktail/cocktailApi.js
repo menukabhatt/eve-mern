@@ -2,12 +2,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 
 
-// const m = () => {
-//   return {
-
-//   }
-// }
-
 export const cocktailApi = createApi({
 
   reducerPath: 'cocktailApi',
@@ -30,11 +24,6 @@ export const cocktailApi = createApi({
 
     }),
 
-    //sdmlsd
-
-
-
-
 
 
 
@@ -46,4 +35,6 @@ export const cocktailApi = createApi({
 
 
 
-})
+});
+
+export const { useCocktailCategoryQuery, useLazyCocktailCategoryQuery } = cocktailApi;
