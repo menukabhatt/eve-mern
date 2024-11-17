@@ -23,11 +23,18 @@ export const cocktailApi = createApi({
         params: {
           c: 'Cocktail'
         },
+
         method: 'GET'
 
       })
 
-    })
+    }),
+
+
+
+
+
+
 
 
 
