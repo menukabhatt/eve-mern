@@ -49,4 +49,4 @@ export const cocktailApi = createApi({
 
 });
 
-export const { useCocktailCategoryQuery, useLazySearchCocktailQuery } = cocktailApi;
+export const { useCocktailCategoryQuery, useLazySearchCocktailQuery, useSearchCocktailQuery } = cocktailApi;

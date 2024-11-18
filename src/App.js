@@ -1,6 +1,7 @@
 import { Button, Input } from "@material-tailwind/react";
-import { useLazySearchCocktailQuery } from "./features/cocktail/cocktailApi";
+import { useLazySearchCocktailQuery, } from "./features/cocktail/cocktailApi";
 import { useFormik } from "formik";
+import { ListCompo } from "./ui/ListCompo";
 
 
 const App = () => {
@@ -12,13 +13,16 @@ const App = () => {
     initialValues: {
       search: ''
     },
-    onSubmit: (val) => {
+    onSubmit: (val, { resetForm }) => {
       getData(val.search);
+      resetForm();
     }
   });
 
+
   return (
     <div>
+
       <div className="max-w-[300px] p-4 ">
 
         <form onSubmit={handleSubmit} className="space-y-3">
@@ -27,10 +31,11 @@ const App = () => {
             name="search" onChange={handleChange} />
           <Button size="sm" type="submit" loading={isLoading}>Submit</Button>
         </form>
-
-
-
       </div>
+
+      {data && data?.drinks && <ListCompo drinks={data?.drinks} />}
+
+
     </div>
   )
 }
