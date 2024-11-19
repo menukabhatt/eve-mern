@@ -2,6 +2,7 @@ import { Button, Input } from "@material-tailwind/react";
 import { useLazySearchCocktailQuery, } from "./features/cocktail/cocktailApi";
 import { useFormik } from "formik";
 import { ListCompo } from "./ui/ListCompo";
+import { useGetProductsQuery } from "./features/products/productApi";
 
 
 const App = () => {
@@ -9,6 +10,10 @@ const App = () => {
 
   const [getData, { isLoading, isFetching, error,
     data, isError }] = useLazySearchCocktailQuery();
+
+  const { isLoading: isLoad, data: d, } = useGetProductsQuery();
+
+
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       search: ''
