@@ -6,9 +6,7 @@ const userSchema = new mongoose.Schema({
 
   username: {
     type: String,
-    required: true,
-    min: [4, "too short"],
-    max: [20, "too long"]
+    required: true
   },
 
   email: {
@@ -32,10 +30,7 @@ const userSchema = new mongoose.Schema({
     default: false
   }
 
-
-
-
-});
+}, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
 
