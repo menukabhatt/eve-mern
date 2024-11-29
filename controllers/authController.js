@@ -1,5 +1,6 @@
 import User from "../model/User.js"
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export const registerUser = async (req, res) => {
 
@@ -27,12 +28,30 @@ export const registerUser = async (req, res) => {
 
 
 export const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
   try {
+    const isExist = await User.findOne({ email: email });
+    if (!isExist) return res.status(401).json({ message: 'invalid credentials' });
+    const pass = bcrypt.compareSync(password, isExist.password);
+    if (!pass) return res.status(401).json({ message: 'invalid credentials' });
+
+    const token = jwt.sign({
+      id: isExist._id,
+      isAdmin: isExist.isAdmin
+    }, 'secret');
+    return res.status(200).json({
+      token,
+      isAdmin: isExist.isAdmin
+    });
+
+
 
   } catch (err) {
-
+    return res.status(400).json({ message: `${err}` });
   }
 }
+
 
 
 
